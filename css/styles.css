@@ -58,16 +58,25 @@ main > section{padding:var(--section-spacing) 0}
   main > section{
     min-height:calc(100vh - var(--header-height));
     scroll-margin-top:calc(var(--header-height) + 12px);
-    display:block;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
   }
+  /* ensure container content centers within sections */
+  main > section .container, main > section.container{ text-align:center; }
+  /* center tech list and project grid content */
+  .tech-list{ justify-content:center }
+  .projects .grid{ justify-content:center }
 }
 
 /* Buttons: solid accent, keep readable contrast */
 .btn{display:inline-block;background:var(--accent);color:#062b2f;padding:.6rem 1rem;border-radius:8px;text-decoration:none;font-weight:600}
 .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--text)}
 
-.projects .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:1rem}
-.card{background:transparent;padding:1rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.04)}
+.projects .grid{display:flex;flex-wrap:wrap;gap:1.25rem;margin-top:1rem;justify-content:center;align-items:flex-start}
+.projects .grid .card{flex:0 0 300px;max-width:320px;background:transparent;padding:1rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.04)}
 
 /* card-media: flat solid surface (no gradient) */
 .card-media{height:140px;border-radius:8px;margin-bottom:.75rem;background:transparent;display:flex;align-items:center;justify-content:center;color:var(--muted)}
@@ -80,3 +89,9 @@ main > section{padding:var(--section-spacing) 0}
 a:focus,button:focus{outline:3px solid rgba(6,182,212,0.09);outline-offset:2px;border-radius:6px}
 .site-footer{padding:2rem;text-align:center;color:var(--muted)}
 @media(min-width:768px){.hero h1{font-size:3.5rem}}
+
+/* Mobile: make project cards full-width stack */
+@media(max-width:640px){
+  .projects .grid{flex-direction:column;align-items:stretch}
+  .projects .grid .card{flex:1 1 auto;max-width:none;width:100%}
+}
