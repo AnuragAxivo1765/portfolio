@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Portfolio — showcase of projects" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#main">Your Name</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#main">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button id="theme-toggle" class="theme-switch" aria-label="Toggle theme" aria-pressed="true" title="Toggle theme">
+          <span class="track" aria-hidden="true">
+            <span class="icon moon">🌙</span>
+            <span class="thumb" aria-hidden="true"></span>
+            <span class="icon sun">☀️</span>
+          </span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Your Name</h1>
+        <p class="tagline">I build elegant interfaces and modern web experiences.</p>
+        <p><a class="btn" href="mailto:you@example.com">Get in touch</a></p>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h2>About</h2>
+      <p>Short bio placeholder. Replace with your information and a concise summary of what you build.</p>
+    </section>
+
+    <section id="skills" class="container skills">
+      <h2>Skills</h2>
+      <ul class="tech-list">
+        <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Accessibility</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="container projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="card-media placeholder">Screenshot placeholder</div>
+          <h3><a href="projects/project1.html">Project One</a></h3>
+          <p class="muted">Short summary of project one.</p>
+        </article>
+        <article class="card">
+          <div class="card-media placeholder">Screenshot placeholder</div>
+          <h3><a href="projects/project2.html">Project Two</a></h3>
+          <p class="muted">Short summary of project two.</p>
+        </article>
+        <article class="card">
+          <div class="card-media placeholder">Screenshot placeholder</div>
+          <h3><a href="projects/project3.html">Project Three</a></h3>
+          <p class="muted">Short summary of project three.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2>Contact</h2>
+      <p>Prefer email: <a href="mailto:you@example.com">you@example.com</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Your Name — Built with ♥</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
