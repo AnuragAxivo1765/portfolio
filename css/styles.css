@@ -95,3 +95,25 @@ a:focus,button:focus{outline:3px solid rgba(6,182,212,0.09);outline-offset:2px;b
   .projects .grid{flex-direction:column;align-items:stretch}
   .projects .grid .card{flex:1 1 auto;max-width:none;width:100%}
 }
+
+/* Contact section: responsive 1x3 (desktop) / 3x1 (mobile) buttons and embedded Google Form */
+.contact{text-align:center}
+.contact-buttons{display:grid;grid-template-columns:1fr;gap:.75rem;margin:1rem 0 1.5rem;align-items:center;justify-items:center}
+.btn-contact{display:inline-block;padding:.7rem 1rem;border-radius:10px;font-weight:700;text-decoration:none;color:#fff;width:100%;max-width:380px;text-align:center}
+.btn-contact.linkedin{background:#0a66c2}
+.btn-contact.discord{background:#5865F2}
+.btn-contact.email{background:var(--accent);color:#012}
+.contact-form{margin-top:1rem}
+.contact-form iframe{width:100%;border:0;min-height:520px;border-radius:8px;background:transparent}
+
+@media(min-width:768px){
+  .contact-buttons{grid-template-columns:repeat(3,1fr);gap:1rem}
+  .btn-contact{max-width:none}
+  .contact-form iframe{min-height:720px}
+}
+
+/* Wider embedded form on larger screens: expand contact container and cap iframe width */
+@media(min-width:980px){
+  .contact.container{max-width:1800px;padding-left:2rem;padding-right:2rem}
+  .contact-form iframe{width:100%;max-width:1680px;margin:0 auto;display:block}
+}
