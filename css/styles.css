@@ -114,6 +114,11 @@ a:focus,button:focus{outline:3px solid rgba(6,182,212,0.09);outline-offset:2px;b
 
 /* Wider embedded form on larger screens: expand contact container and cap iframe width */
 @media(min-width:980px){
-  .contact.container{max-width:1800px;padding-left:2rem;padding-right:2rem}
-  .contact-form iframe{width:100%;max-width:1680px;margin:0 auto;display:block}
+  /* allow contact section to use the full available width on wide screens */
+  .contact.container{max-width:none;width:100%;padding-left:1rem;padding-right:1rem}
+  /* make iframe expand to most of the viewport while capping at a large value */
+  .contact-form iframe{width:min(96vw,1800px);max-width:none;margin:0 auto;display:block}
 }
+
+/* optional full-bleed helper: uncomment to make the form edge-to-edge */
+/* .contact-form iframe{width:100vw;position:relative;left:50%;margin-left:-50vw;border-radius:0} */
