@@ -29,6 +29,16 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
   // Smooth scroll with header offset for nav links
+  // expose header height to CSS so sections can size to viewport
+  function updateHeaderHeight(){
+    const header = document.querySelector('.site-header');
+    const h = header ? header.offsetHeight : 0;
+    document.documentElement.style.setProperty('--header-height', h + 'px');
+  }
+  updateHeaderHeight();
+  let resizeTimer;
+  window.addEventListener('resize', ()=>{ clearTimeout(resizeTimer); resizeTimer = setTimeout(updateHeaderHeight, 120); });
+
   document.querySelectorAll('.site-nav a[href^="#"]').forEach(link=>{
     link.addEventListener('click', function(e){
       const href = this.getAttribute('href');
@@ -39,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function(){
       e.preventDefault();
       const header = document.querySelector('.site-header');
       const headerH = header ? header.offsetHeight : 0;
+      // Scroll so the section sits under the header — on desktop sections are tall enough
       const top = window.pageYOffset + target.getBoundingClientRect().top - headerH - 12;
       window.scrollTo({ top, behavior: 'smooth' });
       // focus target for accessibility after scroll
