@@ -103,6 +103,25 @@ a:focus,button:focus{outline:3px solid rgba(6,182,212,0.09);outline-offset:2px;b
   .projects .grid .card{flex:1 1 auto;max-width:none;width:100%}
 }
 
+/* Magic Rings Background */
+.hero {
+  position: relative;
+  overflow: hidden;
+  z-index: 0; /* Creates local stacking context so z-index: -1 stays within hero */
+}
+.magic-rings-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.hero-inner {
+  position: relative;
+  z-index: 1; /* Keep content above rings */
+}
+
 /* Contact section: responsive 1x3 (desktop) / 3x1 (mobile) buttons and embedded Google Form */
 .contact{text-align:center}
 .contact-buttons{display:grid;grid-template-columns:1fr;gap:.75rem;margin:1rem 0 1.5rem;align-items:center;justify-items:center}
