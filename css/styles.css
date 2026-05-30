@@ -26,7 +26,7 @@ body{
   -moz-osx-font-smoothing:grayscale;
 }
 .container{max-width:var(--container-width);margin:0 auto;padding:2rem}
-.site-header{position:sticky;top:0;z-index:20;background:transparent}
+.site-header{position:sticky;top:0;z-index:10;background:transparent}
 .site-header .container{display:flex;align-items:center;justify-content:space-between}
 .brand{font-weight:700;color:var(--text);text-decoration:none}
 .site-nav a{color:var(--muted);margin-left:1rem;text-decoration:none}
@@ -130,14 +130,3 @@ a:focus,button:focus{outline:3px solid rgba(6,182,212,0.09);outline-offset:2px;b
 
 /* optional full-bleed helper: uncomment to make the form edge-to-edge */
 /* .contact-form iframe{width:100vw;position:relative;left:50%;margin-left:-50vw;border-radius:0} */
-
-/* DarkVeil mount + canvas */
-.darkveil-root{position:relative;width:100%;height:100%;display:block}
-.darkveil-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-
-/* Full-page DarkVeil background (apply this class to the mount node) */
-.darkveil-background{position:fixed;inset:0;z-index:0;pointer-events:none}
-
-/* Ensure content is above the veil */
-main, .site-footer{position:relative;z-index:10}
-
